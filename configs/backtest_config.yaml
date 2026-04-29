@@ -1,0 +1,54 @@
+# ════════════════════════════════════════════════════════
+# BL Backtest Configuration
+# Edit this file to adjust all backtest parameters.
+# Then run:  python backtest/runner.py
+# ════════════════════════════════════════════════════════
+
+# ── Tickers ──────────────────────────────────────────────
+# Must have matching CSV files in Data/ directory
+tickers:
+  - GLD
+  - QQQ
+  - SPY
+  - TLT
+  - IWM
+  - HYG
+
+# ── Time Range ───────────────────────────────────────────
+start_date: "2018-01-01"
+end_date:   "2024-12-31"
+
+# ── Rebalance Frequency ──────────────────────────────────
+# ME = month-end  |  QE = quarter-end  |  W = weekly
+rebalance_freq: "ME"
+
+# ── Portfolio Size ────────────────────────────────────────
+# Only affects target_delta_gamma output; does not change returns
+portfolio_value: 1000000
+
+# ── BL Optimisation Constraints ──────────────────────────
+beta_limit:       1.2    # max portfolio beta vs SPY
+vol_limit_factor: 1.2    # max portfolio vol = QQQ_vol × this
+cov_method:       "kendall"  # "kendall" (robust) or "pearson" (faster)
+
+# ── Regime Detection ─────────────────────────────────────
+smooth_window:    5    # rolling-mode window for UPTREND/RANGE smoothing
+downtrend_window: 1    # fast-flip window for DOWNTREND detection
+min_segment_days: 7    # short segments absorbed into previous regime
+
+# ── BL Model Parameters ──────────────────────────────────
+# Confidence = 1 - exp(-days_in_regime / confidence_denom)
+confidence_denom: 7
+
+# Asymmetric transition windows (days)
+trans_days_enter_downtrend: 5
+trans_days_exit_downtrend:  10
+trans_days_other:           7
+
+# Vol penalty: kicks in when realized_vol > QQQ_vol × threshold
+vol_penalty_threshold: 2.0
+
+# RSI + IV discount
+rsi_penalty_start:     75
+vol_pct_penalty_start: 0.65
+discount_floor:        0.20

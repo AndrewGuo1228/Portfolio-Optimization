@@ -1,0 +1,24 @@
+{
+  "GLD": {
+    "current_drift_regime_base": "UPTREND",
+    "prev_drift_regime_base": "UPTREND",
+    "days_in_current_regime": 6,
+    "current_trend_probability_2w": 0.4759722222222222,
+    "trend_mode": "price",
+    "is_buffer_day": false,
+    "transition_progress": 1.0,
+    "iv_percentile": 50.0,
+    "theta_eligible": false
+  },
+  "SPY": {
+    "current_drift_regime_base": "UPTREND",
+    "prev_drift_regime_base": "UPTREND",
+    "days_in_current_regime": 37,
+    "current_trend_probability_2w": 0.8613888888888889,
+    "trend_mode": "price",
+    "is_buffer_day": false,
+    "transition_progress": 1.0,
+    "iv_percentile": 50.0,
+    "theta_eligible": false
+  }
+}

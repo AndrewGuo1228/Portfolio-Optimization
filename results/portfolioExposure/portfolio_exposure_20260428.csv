@@ -1,0 +1,4 @@
+symbol,delta_gamma_exposure,max_exposure,beta_exposure,extrinsic_value,dollar_theta,beta,source_file
+GLD,500000.0,500000.0,500000.0,0.0,0.0,0.001064693180322317,BACKTEST
+SPY,500000.0,500000.0,500000.0,0.0,0.0,1.0,BACKTEST
+PORTFOLIO_TOTAL,1000000.0,1000000.0,1000000.0,0.0,0.0,1.0,BACKTEST
